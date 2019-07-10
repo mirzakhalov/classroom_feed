@@ -34,7 +34,6 @@ import java.util.UUID;
 public class SliderActivity extends AppCompatActivity {
 
     public static String CLASSCODE = "";
-    public static String FULLNAME = "";
     public int CURRENT_MODE = 0;
 
     public String LABELS []= {"Confused", "Neutral", "Understood"};
@@ -116,7 +115,6 @@ public class SliderActivity extends AppCompatActivity {
         });
 
         CLASSCODE = getIntent().getStringExtra("classCode");
-        FULLNAME = getIntent().getStringExtra("fullName");
 
         comment.setOnEditorActionListener(new TextView.OnEditorActionListener() {
             public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
@@ -138,7 +136,6 @@ public class SliderActivity extends AppCompatActivity {
 
 
 
-        FirebaseDatabase.getInstance().getReference().child("Sessions/"+ CLASSCODE + "/Audience/" + MainActivity.USERID + "/name").setValue(FULLNAME);
 
         ValueEventListener postListener = new ValueEventListener() {
             @Override

@@ -30,7 +30,6 @@ public class MainActivity extends AppCompatActivity {
 
     ImageView logo;
     EditText classCode;
-    EditText fullName;
     Button joinClass;
 
     private FirebaseAuth mAuth;
@@ -56,7 +55,6 @@ public class MainActivity extends AppCompatActivity {
         // initialize the ui elements
         logo = findViewById(R.id.logo);
         classCode = findViewById(R.id.classCode);
-        fullName = findViewById(R.id.fullName);
         joinClass = findViewById(R.id.joinClass);
 
 
@@ -77,7 +75,6 @@ public class MainActivity extends AppCompatActivity {
                             if(!ended){
                                 Intent intent = new Intent(MainActivity.this, SliderActivity.class);
                                 intent.putExtra("classCode", classCodeText);
-                                intent.putExtra("fullName", fullName.getText().toString());
                                 startActivity(intent);
                             } else{
                                 Toast.makeText(MainActivity.this, "This class doesn't exist or already ended", Toast.LENGTH_LONG).show();
